@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies!</title>
+</head>
+<body>
+    <h1>no</h1>
+    <script>
+        // name space
+        const apiCall = {};
+        apiCall.apiURL = 'https://api.themoviedb.org/3/';
+        apiCall.apiKey = '4313ef3612655092b3c706f021f3d6bc';
+
+        apiCall.init = function () {
+            apiCall.getData();
+        }
+
+        apiCall.getData = function () {
+            const url = new URL(apiCall.apiURL);
+            url.search.movie = new URLSearchParams({
+                query: 'cat',
+                api_key: apiCall.apiKey
+            });
+
+
+            fetch(apiCall.apiURL)
+                .then(function(data) {
+                    return data.json();
+                })
+                .then(function(response) {
+                    console.log(response);
+                });
+        }
+        apiCall.init();
+    </script>
+</body>
+</html>
