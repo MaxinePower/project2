@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movies!</title>
+    <title>Bad Movie Generator-3000</title>
 </head>
+
 <body>
-    <h1>no</h1>
-    <script>
-        // name space
-        const apiCall = {};
-        apiCall.apiURL = 'https://api.themoviedb.org/3/';
-        apiCall.apiKey = '4313ef3612655092b3c706f021f3d6bc';
+    <header>
+        <h1>no</h1>
+        <h2>bad movies heck yeah</h2>
+        <p>ipsum, dolor sit amet consectetur adipisicing elit. Provident officiis sit rem hic facere doloribus aut
+            eaque similique mollitia libero temporibus consequatur quod, explicabo est vel assumenda deserunt
+            necessitatibus aperiam.</p>
+    </header>
 
-        apiCall.init = function () {
-            apiCall.getData();
-        }
+    <main>
+        <form action="">
+            <label for="genre">Pick your Genre!</label>
+            <select name="genre" id="genre">
+                <option selected disabled>Genre</option>
+                <option value="18">Drama</option>
+                <option value="28">Action</option>
+                <option value="12">Adventure</option>
+                <option value="16">Animation</option>
+                <option value="35">Comedy</option>
+                <option value="878">Sci-Fi</option>
+                <option value="9648">Mystery</option>
+                <option value="14">Fantasy</option>
+                <option value="10751">Family</option>
+                <option value="27">Horror</option>
+            </select>
 
-        apiCall.getData = function () {
-            const url = new URL(apiCall.apiURL);
-            url.search.movie = new URLSearchParams({
-                query: 'cat',
-                api_key: apiCall.apiKey
-            });
+            <button type="submit">Punish me</button>
+
+        </form>
+
+        <section>
+            <div class="poster imgContainer">
+                <img src="http://placekitten.com/250/400" alt="">
+
+            </div>
+
+            <div class="movieInfo">
+                <h2>Movie titles</h2>
+                <div class="genreRating">
+                    <p class="genre">much SCARY</p>
+                    <p class="rating">4.20</p>
+                </div>
+                <p class="overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit adipisci magnam
+                    quibusdam animi illum? In dignissimos reiciendis repellat quis quidem! Officiis accusantium cumque
+                    expedita praesentium nam ad aut ratione aperiam!</p>
+            </div>
 
 
-            fetch(apiCall.apiURL)
-                .then(function(data) {
-                    return data.json();
-                })
-                .then(function(response) {
-                    console.log(response);
-                });
-        }
-        apiCall.init();
-    </script>
+
+
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+    <footer>Made by us @ <a href="https://junocollege.com/">JuNoCoLlEgE</a> using the <a
+            href="https://developers.themoviedb.org/"> TMDB API</a></footer>
+    <script src="./myscript.js"></script>
 </body>
+
 </html>
