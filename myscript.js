@@ -1,10 +1,6 @@
 // name spacing
 const movieApp = {};
 
-    // url and apikey variables
-    movieApp.apiURL = 'https://api.themoviedb.org/3/discover/movie';
-    movieApp.apiKey = '4313ef3612655092b3c706f021f3d6bc';
-
     // form element in variable
     movieApp.form = document.querySelector('form');
     // method for event listener
