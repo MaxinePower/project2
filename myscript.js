@@ -2,8 +2,17 @@
 const movieApp = {};
 
     // url and apikey variables
-    movieApp.apiURL = 'https://api.themoviedb.org/3/discover/movie';
-    movieApp.apiKey = '4313ef3612655092b3c706f021f3d6bc';
+    // movieApp.apiURL = 'https://api.themoviedb.org/3/discover/movie';
+    // movieApp.apiKey = '4313ef3612655092b3c706f021f3d6bc';
+
+
+    const movieAppUrl = new URL("https://api.themoviedb.org/3/discover/movie")
+    const apiKey = '4313ef3612655092b3c706f021f3d6bc';
+
+// movieApp.genreList = {
+    
+// }
+
 
     // form element in variable
     movieApp.form = document.querySelector('form');
@@ -27,13 +36,17 @@ const movieApp = {};
     
     // make method getData()
     movieApp.getData = (genreID) => {
-        const url =
-            `${movieApp.apiURL}?api_key=${movieApp.apiKey}&vote_average.gte=2&vote_average.lte=5&with_genres=${genreID}`;
-        // url.movie = new URLSearchParams({
-        //     query: 'cat',
-        //     api_key: apiCall.apiKey
-        // });
-        fetch(url)
+        movieAppUrl.search = new URLSearchParams({
+            api_key: apiKey,
+            'vote_average.gte': 2,
+            'vote_average.lte': 5,
+            with_genres: genreID,
+            with_original_language: 'en',
+        // with_original_language: 'it en',
+
+        })
+
+        fetch(movieAppUrl)
             .then(function (data) {
                 return data.json();
             })
