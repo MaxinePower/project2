@@ -83,7 +83,7 @@ movieApp.genreOptions = function() {
                 const genreId = movieArray.genre_ids;
                 const language = movieArray.original_language;
 
-                const fullPoster = `https://image.tmdb.org/t/p/w300/${poster}`;
+                const fullPoster = `https://image.tmdb.org/t/p/original/${poster}`;
 
                 const h3 = document.querySelector(`h3`);
                 h3.innerHTML= movieTitle;

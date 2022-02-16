@@ -1,21 +1,31 @@
 html {
     font-size: 125%;
+    line-height:1.3;
 }
 body {
-    font-size: 1rem;
+    font-size: .8rem;
     font-family: $bodyFont;
     font-weight: 700;
 }
 
 h1 {
     font-family: $headerFont1;
-    font-size: 6rem;
+    font-size: 4.5rem;
     color:$accentPrimary;
     text-shadow: 3px 3px white;
 
+}
+h3{
+    font-size: 1.6rem;
 }
 
 h2, h3, label, button{
     font-family: $accentFont;
 
+};
+
+.genreRating, .dateLanguage{
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-size:1rem;
 }

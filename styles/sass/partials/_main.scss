@@ -1,0 +1,14 @@
+form, .generatedMovie{
+  display: flex;
+  flex-direction: column;
+
+}
+
+form{
+  label{
+    font-size: 1.45rem;
+  }
+  .genreSelect{
+    margin: 4% 0%;
+  }
+}
