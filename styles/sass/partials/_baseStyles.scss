@@ -1,0 +1,49 @@
+.wrapper {
+  max-width: 1260px;
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+a:hover,
+a:focus {
+  color: white;
+}
+
+button:hover,
+button:focus {
+  background-color: black;
+  color: red;
+}
+
+Button {
+  padding: 10px 40px;
+  border-radius: 0px;
+  background-color: red;
+  border-style: none;
+}
+
+body {
+   background-color:$backgroundPrimary;
+   text-align: center;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+// Footer
+footer { 
+  background:black;
+width: 100%;
+}
+
+
+.intro, form, .generatedMovie{
+  background-color:$backgroundSecondary;
+  border: 4px solid $accentPrimary;
+  border-radius: 15px;
+  margin-top: 20px;
+}

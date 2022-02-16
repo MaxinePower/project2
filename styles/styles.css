@@ -232,4 +232,64 @@ html {
 
 body {
   font-size: 1rem;
+  font-family: "Raleway";
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Lobster";
+  font-size: 6rem;
+  color: #D2E603;
+  text-shadow: 3px 3px white;
+}
+
+h2, h3, label, button {
+  font-family: "Fugaz One";
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+a:hover,
+a:focus {
+  color: white;
+}
+
+button:hover,
+button:focus {
+  background-color: black;
+  color: red;
+}
+
+Button {
+  padding: 10px 40px;
+  border-radius: 0px;
+  background-color: red;
+  border-style: none;
+}
+
+body {
+  background-color: #2EC1AC;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background: black;
+  width: 100%;
+}
+
+.intro, form, .generatedMovie {
+  background-color: #037474;
+  border: 4px solid #D2E603;
+  border-radius: 15px;
+  margin-top: 20px;
 }

@@ -3,5 +3,19 @@ html {
 }
 body {
     font-size: 1rem;
-    
+    font-family: $bodyFont;
+    font-weight: 700;
+}
+
+h1 {
+    font-family: $headerFont1;
+    font-size: 6rem;
+    color:$accentPrimary;
+    text-shadow: 3px 3px white;
+
+}
+
+h2, h3, label, button{
+    font-family: $accentFont;
+
 }
