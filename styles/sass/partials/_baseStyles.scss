@@ -5,25 +5,22 @@
   height: 100%;
 };
 
-
+button {
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: $accentPrimary;
+  border-style: none;
+};
 
 button:hover,
 button:focus {
   background-color: black;
-  color: red;
-};
-
-Button {
-  padding: 10px 40px;
-  border-radius: 0px;
-  background-color: red;
-  border-style: none;
+  color: $accentPrimary;
 };
 
 body {
-   background-color:$backgroundPrimary;
-   text-align: center;
-  
+  background-color:$backgroundPrimary;
+  text-align: center;
 };
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,22 +31,19 @@ h1, h2, h3, h4, h5, h6 {
 // Footer
 footer { 
   background:black;
-width: 100%;
-padding: 3% 0;
-margin-top: 5%;
-color: $accentPrimary;
-a{
-  color:$accentPrimary;
-}
+  width: 100%;
+  padding: 3% 0;
+  margin-top: 5%;
+  color: $accentPrimary;
+  a{
+    color:$accentPrimary;
+  }
 
-a:hover,
-a:focus {
-  color: white;
-  text-decoration: none;
-};
-
-
-
+  a:hover,
+  a:focus {
+    color: white;
+    text-decoration: none;
+  };
 };
 
 
@@ -59,6 +53,7 @@ a:focus {
   border-radius: 15px;
   margin-top: 20px;
   padding: 5%;
+  box-shadow: 5px 5px $accentTertiary, -3px -3px $primaryFontColor;
 };
 
 .poster{

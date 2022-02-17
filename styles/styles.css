@@ -229,6 +229,7 @@ template {
 html {
   font-size: 125%;
   line-height: 1.3;
+  color: #fff;
 }
 
 body {
@@ -241,7 +242,7 @@ h1 {
   font-family: "Lobster";
   font-size: 4.5rem;
   color: #D2E603;
-  text-shadow: 3px 3px white;
+  text-shadow: 3px 3px #484137, -3px -3px #fffdd1;
 }
 
 h3 {
@@ -265,17 +266,17 @@ h2, h3, label, button {
   height: 100%;
 }
 
+button {
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: #D2E603;
+  border-style: none;
+}
+
 button:hover,
 button:focus {
   background-color: black;
-  color: red;
-}
-
-Button {
-  padding: 10px 40px;
-  border-radius: 0px;
-  background-color: red;
-  border-style: none;
+  color: #D2E603;
 }
 
 body {
@@ -310,6 +311,8 @@ footer a:focus {
   border-radius: 15px;
   margin-top: 20px;
   padding: 5%;
+  -webkit-box-shadow: 5px 5px #484137, -3px -3px #fffdd1;
+          box-shadow: 5px 5px #484137, -3px -3px #fffdd1;
 }
 
 .poster {
@@ -319,6 +322,15 @@ footer a:focus {
 
 p {
   margin-top: 5%;
+}
+
+h1 img {
+  max-width: 125px;
+  margin-bottom: -30px;
+}
+
+.desktopEgg {
+  display: none;
 }
 
 form, .generatedMovie {
@@ -336,4 +348,19 @@ form label {
 }
 form .genreSelect {
   margin: 4% 0%;
+  padding: 1%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  letter-spacing: 1px;
+  font-family: "Lobster";
+  background-color: #2EC1AC;
+  border: 5px solid #D2E603;
+  border-radius: 5px;
+}
+form .genreSelect option {
+  font-family: "Fugaz One", sans-serif;
+  font-size: 1rem;
+  text-shadow: none;
 }

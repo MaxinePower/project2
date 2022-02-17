@@ -93,33 +93,48 @@ movieApp.genreOptions = function() {
                 // genre.innerHTML = 
                 // foreach loop that goes through genre_ids then puts that indexNumber in like movieApp.genreList[indexNumber]
 
+                // grabbing main to append generated movie to
+                const main = document.querySelector('main');
+
+                // creating section element for the generated movie
+                const generatedMovie = document.createElement('section');
+                generatedMovie.classList.add('generatedMovie');
+
+                // create div.imgContainer with an img.poster in it
+                const imgContainer = document.createElement('div');
+                imgContainer.classList.add('imgContainer');
+
+                const posterElement = document.createElement('img');
+                posterElement.classList.add('poster');
+                posterElement.alt = 'movie poster';
+
+                // appending poster stuff into the section
+                generatedMovie.appendChild(imgContainer).appendChild(posterElement);
+                // this is up here for now 
+                main.append(generatedMovie);
+                
+                
+                // instead of finding these elements, maybe create them????
                 const rating = document.querySelector(`.rating`);
                 rating.innerHTML = `Rating: ${voteAvg}/10`
-
+                
                 const description = document.querySelector(`.overview`);
                 description.innerHTML = overview
                 
-
+                
                 const languageP = document.querySelector(`.language`)
                 languageP.innerHTML = `Original Language: ${language}`;
-
+                
                 const releaseDateP = document.querySelector(`.date`)
                 releaseDateP.innerHTML = `Release Date: ${releaseDate}`;
-
+                
                 const posterImg = document.querySelector(`.poster`)
                 posterImg.setAttribute('src', fullPoster);
-
-
-
-
-
-
-
-
-
-
-
-
+                
+                
+                
+                // appending into the end of the main
+                // main.append(generatedMovie);
             });
     };
 

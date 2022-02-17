@@ -10,5 +10,21 @@ form{
   }
   .genreSelect{
     margin: 4% 0%;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5rem;
+    // maybe a dakrer teal here??
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+    letter-spacing: 1px;
+    font-family: $headerFont1;
+    background-color: $backgroundPrimary;
+    border: 5px solid $accentPrimary;
+    border-radius: 5px;
+    option {
+      font-family: $accentFont, sans-serif;
+      font-size: 1rem;
+      text-shadow: none;
+    }
   }
 }
