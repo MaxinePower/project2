@@ -346,7 +346,7 @@ form, .generatedMovie {
 form label {
   font-size: 1.45rem;
 }
-form .genreSelect {
+form select {
   margin: 4% 0%;
   padding: 1%;
   text-align: center;
@@ -359,7 +359,7 @@ form .genreSelect {
   border: 5px solid #D2E603;
   border-radius: 5px;
 }
-form .genreSelect option {
+form select option {
   font-family: "Fugaz One", sans-serif;
   font-size: 1rem;
   text-shadow: none;
