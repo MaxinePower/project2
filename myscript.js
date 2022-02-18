@@ -85,8 +85,6 @@ movieApp.genreOptions = function() {
 
                 const fullPoster = `https://image.tmdb.org/t/p/original/${poster}`;
 
-                const h3 = document.querySelector(`h3`);
-                h3.innerHTML= movieTitle;
 
 
                 // const genre = document.querySelector(`.genre`);
@@ -113,34 +111,79 @@ movieApp.genreOptions = function() {
                 // this is up here for now 
                 main.append(generatedMovie);
                 
+                // create div.movieInfo with an h3, div.genreRating, div.dateLanguage, p.overview
+                const movieInfo = document.createElement('div');
+                movieInfo.classList.add('movieInfo');
+
+                // creating and filled h3 which is the movie title
+                const h3 = document.createElement(`h3`);
+                h3.textContent = movieTitle;
+
+                // created and filled div with genre rating
+                const genreRating = document.createElement(`div`);
+                genreRating.classList.add('genreRating');
+
+               
+                // created and filled p tag with the movie rating
+                const rating = document.createElement(`p`);
+                rating.classList.add(`rating`);
+                rating.innerHTML = `Rating: ${voteAvg}/10`;
+
+               
+                // -------DATE LANGUAGE CONTAINER----
+                
+                // created div that holds date and language p tags and content
+                const dateLanguage = document.createElement(`div`);
+                dateLanguage.classList.add(`dateLanguage`);
+                
+                // created p tag with original language
+                 const languageP = document.createElement(`p`);
+                languageP.classList.add(`language`);
+                languageP.textContent = `Original Language: ${language}`;
+                
+                // created p tag with release date
+                const releaseDateP = document.createElement(`p`);
+                releaseDateP.classList.add(`releaseDate`);
+                releaseDateP.textContent = `Release Date: ${releaseDate}`;
+
+                // created p tag for movie overview (with content)  
+                
+                const description = document.createElement(`p`);
+                description.classList.add(`overview`);
+                description.textContent = overview;
+                
+
+                
+                
+                
+                generatedMovie.appendChild(movieInfo);
+                movieInfo.append(genreRating, dateLanguage,description);
+                genreRating.appendChild(rating);
+                dateLanguage.append(languageP, releaseDateP);
+
+                
                 
                 // instead of finding these elements, maybe create them????
-                const rating = document.querySelector(`.rating`);
-                rating.innerHTML = `Rating: ${voteAvg}/10`
                 
-                const description = document.querySelector(`.overview`);
-                description.innerHTML = overview
-                
-                
-                const languageP = document.querySelector(`.language`)
-                languageP.innerHTML = `Original Language: ${language}`;
-                
-                const releaseDateP = document.querySelector(`.date`)
-                releaseDateP.innerHTML = `Release Date: ${releaseDate}`;
                 
                 const posterImg = document.querySelector(`.poster`)
                 posterImg.setAttribute('src', fullPoster);
                 
                 
                 
+                
+                
+                
+                
+                
                 // appending into the end of the main
                 // main.append(generatedMovie);
             });
-    };
-
-    movieApp.init = function () {
-        movieApp.genreOptions();
-        movieApp.formSubmit();
-    }
-    
+        };
+        
+        movieApp.init = function () {
+            movieApp.genreOptions();
+            movieApp.formSubmit();
+        }
+        
     movieApp.init();
