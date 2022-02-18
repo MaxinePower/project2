@@ -16,7 +16,6 @@
 
 <body>
     <div class="wrapper">
-
         <header>
             <h1>
                 Spoiled
@@ -25,10 +24,8 @@
                 <img src="./assets/spoiled-egg.png" class="desktopEgg">
             </h1>
             <div class="intro">
-
                 <h2>"A rotten egg can't be spoiled"</h2>
-                <p>Good movies are great, but bad movies, are usually not better but sometimes more addictive. Pick a
-                    genre, roll the die, and get ready to watch the worst things humans have put on film!</p>
+                <p>Good movies are great, but bad movies, are usually not better but sometimes more addictive. Pick agenre, roll the die, and get ready to watch the worst things humans have put on film!</p>
             </div>
         </header>
 
@@ -37,6 +34,15 @@
                 <label for="genre">Pick your Genre!</label>
                 <select name="genre" id="genreSelect" class="genreSelect">
                     <option selected>Random</option>
+                </select>
+
+                <label for="era">Pick your Era!</label>
+                <select name="era" id="eraSelect">
+                    <option selected>Random</option>
+                    <option value="modern">Modern</option>
+                    <option value="oldSchool">Old School</option>
+                    <option value="retro">Retro</option>
+                    <option value="goldenAge">Golden Age</option>
                 </select>
 
                 <button type="submit">Punish me</button>
@@ -49,9 +55,9 @@
 
         </main>
     </div>
-    <footer>Made by us @ <a href="https://junocollege.com/">Juno College</a> using the <a
-            href="https://developers.themoviedb.org/"> TMDB API</a></footer>
+    <footer>
+        <p>Made by us @ <a href="https://junocollege.com/">Juno College</a> using the <a href="https://developers.themoviedb.org/"> TMDB API</a></p> 
+    </footer>
     <script src="./myscript.js"></script>
 </body>
-
 </html>

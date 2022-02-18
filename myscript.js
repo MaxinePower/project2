@@ -36,7 +36,26 @@ movieApp.formSubmit = function() {
         e.preventDefault();
     
         const genre = document.getElementById('genreSelect').value;
-        movieApp.getData(genre);
+
+        const era = document.getElementById('eraSelect').value;
+        let eraRangeGte = '';
+        let eraRangeLte = '';
+        console.log(era);
+        if (era === 'modern') {
+            eraRangeGte = '2000-01-01';
+        } else if (era === 'oldSchool') {
+            eraRangeGte = '1980-01-01';
+            eraRangeLte = '2000-01-01';
+        } else if (era === 'retro') {
+            eraRangeGte = '1960-01-01'
+            eraRangeLte = '1980-01-01';
+        } else if (era === 'goldenAge') {
+            eraRangeGte = '1940-01-01'
+            eraRangeLte = '1960-01-01';
+        }
+
+        movieApp.getData(genre, eraRangeGte, eraRangeLte);
+
         // to reset to random selection, but its more convinient in the app not to
         // movieApp.form.reset();
 
@@ -53,7 +72,7 @@ const randomNumber = (array)=>{
 }
 
 // making method getData()
-movieApp.getData = (genreID) => {
+movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
     // search parameters
     movieAppUrl.search = new URLSearchParams({
         api_key: apiKey,
@@ -61,6 +80,9 @@ movieApp.getData = (genreID) => {
         'vote_average.lte': 5,
         with_genres: genreID,
         with_original_language: 'en',
+        'primary_release_date.gte': eraRangeGte,
+        'primary_release_date.lte': eraRangeLte,
+        sort_by: 'revenue.desc'
     })
 
     // fetching a movie with the users inputed query
@@ -101,10 +123,6 @@ movieApp.getData = (genreID) => {
             const posterElement = document.createElement('img');
             posterElement.classList.add('poster');
             posterElement.alt = 'movie poster';
-            
-            // putting img src in the poster
-            const posterImg = document.querySelector(`.poster`)
-            posterImg.setAttribute('src', fullPoster);
 
             // --------MOVIE INFO DIV STUFF---------
 
@@ -159,17 +177,22 @@ movieApp.getData = (genreID) => {
 
             // appending rating into rating div
             genreRating.appendChild(rating);
+
             // appending content into dateLanguage
             dateLanguage.append(languageP, releaseDateP);
 
             // appending all of the elements we created into movieInfo
-            movieInfo.append(genreRating, dateLanguage, description);
+            movieInfo.append(h3, genreRating, dateLanguage, description);
 
             // appending movieInfo div into generatedMovie section
             generatedMovie.appendChild(movieInfo);
 
             // appending section onto the page
             movieSelectionContainer.append(generatedMovie);
+
+            // putting img src in the poster
+            const posterImg = document.querySelector(`.poster`);
+            posterImg.setAttribute('src', fullPoster);
         });
     };
 
