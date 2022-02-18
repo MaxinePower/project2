@@ -3,8 +3,13 @@
   width: 95%;
   margin: 0 auto;
   height: 100%;
-};
 
+};
+header, main{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 button {
   padding: 10px 40px;
   border-radius: 5px;
@@ -46,11 +51,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
   padding: 5%;
   box-shadow: 5px 5px $accentTertiary, -3px -3px $primaryFontColor;
+
 };
+
+.intro, form{
+    max-width:760px;
+}
 
 .poster{
   width: 100%;
   border-radius:6px;
+  max-width: 350px;
 };
 
 p{
@@ -78,3 +89,33 @@ footer {
     margin: 0;
   }
 };
+
+
+
+
+
+
+// /* Element | file:///c:/Users/impul/OneDrive/Documents/all-web-dev/juno-bootcamp/juno-projects/project2/index.html */
+
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// /* styles.css | file:///c:/Users/impul/OneDrive/Documents/all-web-dev/juno-bootcamp/juno-projects/project2/styles/styles.css */
+
+// .intro {
+//   margin-top: ;
+// }
+
+// .intro, form, .generatedMovie {
+//   /* margin-top: 20px; */
+//   margin-top: 30px;
+// }
+
+// @media (min-width: 500px) {
+//   .heroHeader {
+//     margin-top: 20px;
+//   }
+// }

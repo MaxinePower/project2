@@ -266,6 +266,19 @@ h2, h3, label, button {
   height: 100%;
 }
 
+header, main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 button {
   padding: 10px 40px;
   border-radius: 5px;
@@ -314,9 +327,14 @@ h1, h2, h3, h4, h5, h6 {
           box-shadow: 5px 5px #484137, -3px -3px #fffdd1;
 }
 
+.intro, form {
+  max-width: 760px;
+}
+
 .poster {
   width: 100%;
   border-radius: 6px;
+  max-width: 350px;
 }
 
 p {
@@ -342,13 +360,29 @@ footer p {
   margin: 0;
 }
 
-h1 img {
+.heroHeader img {
   max-width: 125px;
   margin-bottom: -30px;
 }
-
-.desktopEgg {
+.heroHeader .desktopEgg {
   display: none;
+}
+.heroHeader .mobileEgg {
+  display: block;
+  margin: 0 auto;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 form, .generatedMovie {
@@ -359,6 +393,9 @@ form, .generatedMovie {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 form label {
@@ -376,9 +413,76 @@ form select {
   background-color: #2EC1AC;
   border: 5px solid #D2E603;
   border-radius: 5px;
+  max-width: 450px;
+  width: 100%;
 }
 form select option {
   font-family: "Fugaz One", sans-serif;
   font-size: 1rem;
   text-shadow: none;
+}
+
+button, select {
+  max-width: 450px;
+}
+
+.overview, .intro p {
+  max-width: 550px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    max-width: 1260px;
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .heroHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .heroHeader .mobileEgg {
+    display: none;
+  }
+  .heroHeader .desktopEgg {
+    display: inline-block;
+  }
+}
+@media (min-width: 670px) {
+  .heroHeader {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .heroHeader img {
+    max-width: 90px;
+    margin-bottom: -15px;
+    margin-left: 20px;
+  }
+
+  .intro, .form, .generatedMovie {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 900px) {
+  .heroHeader {
+    margin-top: 20px;
+  }
+
+  .generatedMovie {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .imgContainer {
+    margin-right: 20px;
+  }
 }

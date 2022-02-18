@@ -1,6 +1,7 @@
 form, .generatedMovie{
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
@@ -21,10 +22,21 @@ form{
     background-color: $backgroundPrimary;
     border: 5px solid $accentPrimary;
     border-radius: 5px;
+    max-width: 450px;
+    width: 100%;
     option {
       font-family: $accentFont, sans-serif;
       font-size: 1rem;
       text-shadow: none;
     }
   }
+}
+
+button,select{
+  max-width:450px;
+}
+
+.overview, .intro p{
+  max-width:550px;
+  text-align:center;
 }
