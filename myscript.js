@@ -29,6 +29,15 @@ console.log(movieApp.genreList);
 
 // grabbing form element in variable
 movieApp.form = document.querySelector('form');
+
+movieApp.button = document.querySelector('button');
+movieApp.buttonUnfocused = function() {
+    movieApp.button.addEventListener('click', (e)=>{
+        e.target.blur();
+    })
+
+}
+
 // method for event listener on the form
 movieApp.formSubmit = function() {
     movieApp.form.addEventListener('submit', function(e) {
@@ -61,7 +70,7 @@ movieApp.formSubmit = function() {
 
         // console.log(movieApp.form[1]);
 
-        e.target.blur();
+    
     });
 };
 
@@ -200,6 +209,7 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 movieApp.init = function () {
     movieApp.genreOptions();
     movieApp.formSubmit();
+    movieApp.buttonUnfocused();
 }
 
 // calling the initialization method
