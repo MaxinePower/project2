@@ -115,7 +115,7 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 
             const posterElement = document.createElement('img');
             posterElement.classList.add('poster');
-            posterElement.alt = 'movie poster';
+
 
             // --------MOVIE INFO DIV STUFF---------
 
@@ -179,8 +179,14 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 
             // putting img src in the poster
             const posterImg = document.querySelector(`.poster`);
-            posterImg.setAttribute('src', fullPoster);
-            console.log(posterImg);
+            if (poster !== null) {
+                posterImg.setAttribute('src', fullPoster);
+                posterElement.alt = `${movieTitle} movie poster`;
+            } else {
+                
+                posterElement.alt = `This movie is so bad, they didn't want you to see their poster. Here's a picture of gudetama instead`;
+                posterImg.setAttribute('src', `./assets/gudetama-confused-alt.png`);
+            }
         });
     };
 
