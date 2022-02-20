@@ -1,8 +1,9 @@
 html {
     font-size: 125%;
-    line-height:1.3;
+    line-height: 1.3;
     color: #fff;
 }
+
 body {
     font-size: .8rem;
     font-family: $bodyFont;
@@ -12,20 +13,21 @@ body {
 h1 {
     font-family: $headerFont1;
     font-size: 4.5rem;
-    color:$accentPrimary;
+    color: $accentPrimary;
     text-shadow: 3px 3px $accentTertiary, -3px -3px $primaryFontColor;
 }
+
 h3{
     font-size: 1.6rem;
 }
 
-h2, h3, label, button{
+h2, h3, label, button {
     font-family: $accentFont;
 
-};
+}
 
-.genreRating, .dateLanguage{
+.genreRating, .dateLanguage {
     font-weight: 800;
     letter-spacing: 0.5px;
-    font-size:1rem;
+    font-size: 1rem;
 }

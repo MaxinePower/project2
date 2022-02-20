@@ -1,7 +1,22 @@
-h1 img {
-    max-width: 125px;
-    margin-bottom: -30px;
+.heroHeader {
+    img {
+        max-width: 125px;
+        margin-bottom: -30px;
+    }
+
+    .desktopEgg {
+        display: none;
+    }
+    
+    .mobileEgg {
+        display: block;
+        margin: 0 auto;
+    }
+
 }
-.desktopEgg {
-    display: none;
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

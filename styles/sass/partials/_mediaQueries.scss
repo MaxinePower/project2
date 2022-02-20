@@ -1,0 +1,64 @@
+// ----FIRST BREAKPOINT 500PX (SMALL TABLET)---
+
+@media (min-width: 500px) {
+  .wrapper {
+    max-width: 1260px;
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .heroHeader {
+    display: flex;
+    align-items: center;
+
+    .mobileEgg {
+      display: none
+    }
+    
+    .desktopEgg {
+      display: inline-block;
+    }
+  }
+}
+
+
+// ----SECOND BREAKPOINT 670PX (LARGE TABLET)
+
+@media (min-width: 670px) {
+  .heroHeader {
+    justify-content: center;
+    img {
+      max-width: 90px;
+      margin-bottom: -15px;
+      margin-left: 20px;
+    }
+  }
+  .intro, .form, .generatedMovie {
+    margin-top: 30px;
+  }
+}
+
+
+// ---THIRD BREAKPOINT 900PX (LAPTOP SCREEN)
+
+@media (min-width: 900px) {
+  .heroHeader {
+    margin-top: 20px;
+  }
+
+  .generatedMovie {
+    flex-direction: row;
+  }
+  .imgContainer {
+    margin-right: 50px;
+  }
+
+  .movieInfo {
+    text-align: left;
+  
+    p {
+      text-align: left;
+    }
+  }
+}

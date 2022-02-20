@@ -4,9 +4,6 @@ const movieApp = {};
 const movieAppUrl = new URL("https://api.themoviedb.org/3/discover/movie");
 const apiKey = '4313ef3612655092b3c706f021f3d6bc';
 
-// making a list object for genres
-movieApp.genreList = {};
-
 // making method to create genre dropdown list
 movieApp.genreOptions = function() {
     fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=4313ef3612655092b3c706f021f3d6bc&language=en-US').then(function(res) {
@@ -19,16 +16,20 @@ movieApp.genreOptions = function() {
             genreDropdownEntry.value = genre.id;
             genreDropdownEntry.textContent = genre.name;
             genreDropdown.append(genreDropdownEntry);
-            // this is adding it to a variable for later use
-            movieApp.genreList[genre.id] = genre.name;
         });
     });
 };
 
-console.log(movieApp.genreList);
-
 // grabbing form element in variable
 movieApp.form = document.querySelector('form');
+
+movieApp.button = document.querySelector('button');
+movieApp.buttonUnfocused = function() {
+    movieApp.button.addEventListener('click', (e)=>{
+        e.target.blur();
+    });
+};
+
 // method for event listener on the form
 movieApp.formSubmit = function() {
     movieApp.form.addEventListener('submit', function(e) {
@@ -40,7 +41,7 @@ movieApp.formSubmit = function() {
         const era = document.getElementById('eraSelect').value;
         let eraRangeGte = '';
         let eraRangeLte = '';
-        console.log(era);
+        
         if (era === 'modern') {
             eraRangeGte = '2000-01-01';
         } else if (era === 'oldSchool') {
@@ -56,12 +57,8 @@ movieApp.formSubmit = function() {
 
         movieApp.getData(genre, eraRangeGte, eraRangeLte);
 
-        // to reset to random selection, but its more convinient in the app not to
+        // to reset to random selection, but its more convinient in the app not to, so we were like 'no bitch'
         // movieApp.form.reset();
-
-        // console.log(movieApp.form[1]);
-
-        e.target.blur();
     });
 };
 
@@ -92,16 +89,12 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
         })
         .then(function (response) {
             const movieArray = randomNumber(response.results);
-            // console.log(response.results[randomNumber(response.results)] );
 
             const overview = movieArray.overview;
             const poster = movieArray.poster_path;
             const voteAvg = movieArray.vote_average;
             const movieTitle = movieArray.title;
-            const releaseDate = movieArray.release_date
-            // used in a for each to name each genre num before display
-            const genreId = movieArray.genre_ids;
-            // console.log(genreId);
+            const releaseDate = movieArray.release_date;
             const language = movieArray.original_language;
 
             const fullPoster = `https://image.tmdb.org/t/p/original/${poster}`;
@@ -122,7 +115,7 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 
             const posterElement = document.createElement('img');
             posterElement.classList.add('poster');
-            posterElement.alt = 'movie poster';
+
 
             // --------MOVIE INFO DIV STUFF---------
 
@@ -142,12 +135,6 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
             const rating = document.createElement(`p`);
             rating.classList.add(`rating`);
             rating.innerHTML = `Rating: ${voteAvg}/10`;
-
-            // trying to display the genre
-            const genre = document.createElement(`p`);
-            genre.classList.add(`genre`);
-            // genre.innerHTML = genreList[];
-            // foreach loop that goes through genre_ids then puts that indexNumber in like movieApp.genreList[indexNumber]
             
             // -------DATE LANGUAGE CONTAINER----
             
@@ -192,7 +179,14 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 
             // putting img src in the poster
             const posterImg = document.querySelector(`.poster`);
-            posterImg.setAttribute('src', fullPoster);
+            if (poster !== null) {
+                posterImg.setAttribute('src', fullPoster);
+                posterElement.alt = `${movieTitle} movie poster`;
+            } else {
+                
+                posterElement.alt = `This movie is so bad, they didn't want you to see their poster. Here's a picture of gudetama instead`;
+                posterImg.setAttribute('src', `./assets/gudetama-confused-alt.png`);
+            }
         });
     };
 
@@ -200,6 +194,7 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 movieApp.init = function () {
     movieApp.genreOptions();
     movieApp.formSubmit();
+    movieApp.buttonUnfocused();
 }
 
 // calling the initialization method
