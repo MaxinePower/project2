@@ -1,22 +1,22 @@
-form, .generatedMovie{
+form, .generatedMovie {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-form{
-  label{
+form {
+  label {
     font-size: 1.45rem;
   }
-  select{
+
+  select {
     margin: 4% 0%;
     padding: 1%;
     text-align: center;
     font-size: 1.5rem;
     // maybe a daker teal here??
-    color: #fff;
-    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+    color: $secondaryFontColor;
+    text-shadow: 1px 0 0 $accentQuaternary, 0 1px 0 $accentQuaternary, -1px 0 0 $accentQuaternary, 0 -1px 0 $accentQuaternary;
     letter-spacing: 1px;
     font-family: $headerFont1;
     background-color: $backgroundPrimary;
@@ -24,6 +24,7 @@ form{
     border-radius: 5px;
     max-width: 450px;
     width: 100%;
+
     option {
       font-family: $accentFont, sans-serif;
       font-size: 1rem;
@@ -32,11 +33,11 @@ form{
   }
 }
 
-button,select{
-  max-width:450px;
+button, select {
+  max-width: 450px;
 }
 
-.overview, .intro p{
-  max-width:550px;
-  text-align:center;
+.overview, .intro p {
+  max-width: 550px;
+  text-align: center;
 }

@@ -259,6 +259,25 @@ h2, h3, label, button {
   font-size: 1rem;
 }
 
+body {
+  background-color: #2EC1AC;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .wrapper {
   max-width: 1260px;
   width: 95%;
@@ -286,12 +305,12 @@ button {
   border-style: none;
   color: #484137;
   font-size: 1.5rem;
-  -webkit-box-shadow: 3px 3px black;
-          box-shadow: 3px 3px black;
-  -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  -webkit-box-shadow: 3px 3px #000;
+          box-shadow: 3px 3px #000;
+  -webkit-transition: background-color 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background-color 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background-color 250ms ease-in-out, transform 150ms ease;
+  transition: background-color 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
 }
 
 button:hover,
@@ -301,15 +320,10 @@ button:focus {
 }
 
 button:active {
-  -webkit-box-shadow: 1px 1px black;
-          box-shadow: 1px 1px black;
+  -webkit-box-shadow: 1px 1px #000;
+          box-shadow: 1px 1px #000;
   -webkit-transform: translateY(1px) translateX(1px);
           transform: translateY(1px) translateX(1px);
-}
-
-body {
-  background-color: #2EC1AC;
-  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -342,8 +356,9 @@ p {
 }
 
 footer {
-  background: black;
+  background: #000;
   width: 100%;
+  max-height: 75px;
   padding: 3% 0;
   margin-top: 5%;
   color: #D2E603;
@@ -353,7 +368,7 @@ footer a {
 }
 footer a:hover,
 footer a:focus {
-  color: white;
+  color: #FFF;
   text-decoration: none;
 }
 footer p {
@@ -406,7 +421,7 @@ form select {
   padding: 1%;
   text-align: center;
   font-size: 1.5rem;
-  color: #fff;
+  color: #FFF;
   text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
   letter-spacing: 1px;
   font-family: "Lobster";
