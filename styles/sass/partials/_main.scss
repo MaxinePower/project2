@@ -10,11 +10,10 @@ form {
   }
 
   select {
-    margin: 4% 0%;
+    margin: 4% 0% 10% 0%;
     padding: 1%;
     text-align: center;
     font-size: 1.5rem;
-    // maybe a daker teal here??
     color: $secondaryFontColor;
     text-shadow: 1px 0 0 $accentQuaternary, 0 1px 0 $accentQuaternary, -1px 0 0 $accentQuaternary, 0 -1px 0 $accentQuaternary;
     letter-spacing: 1px;
@@ -25,7 +24,13 @@ form {
     max-width: 450px;
     width: 100%;
 
+    &:hover,
+    &:focus {
+      background-color: $accentTertiary;
+    }
+
     option {
+      background-color: $backgroundPrimary;
       font-family: $accentFont, sans-serif;
       font-size: 1rem;
       text-shadow: none;
@@ -33,11 +38,25 @@ form {
   }
 }
 
-button, select {
+button {
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: $accentPrimary;
+  border-style: none;
+  color: $accentTertiary;
+  font-size: 1.5rem;
+  box-shadow: 3px 3px $accentQuaternary;
+  transition: background-color 250ms ease-in-out, transform 150ms ease;
   max-width: 450px;
 }
 
-.overview, .intro p {
-  max-width: 550px;
-  text-align: center;
+button:hover,
+button:focus {
+  background-color: $accentTertiary;
+  color: #D2E603;
+}
+
+button:active{
+  box-shadow: 1px 1px $accentQuaternary;
+  transform: translateY(1px) translateX(1px);
 }

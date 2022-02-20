@@ -51,6 +51,14 @@
     flex-direction: row;
   }
   .imgContainer {
-    margin-right: 20px;
+    margin-right: 50px;
+  }
+
+  .movieInfo {
+    text-align: left;
+  
+    p {
+      text-align: left;
+    }
   }
 }

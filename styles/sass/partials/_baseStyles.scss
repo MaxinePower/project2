@@ -21,31 +21,13 @@ header, main {
   align-items: center;
 }
 
-button {
-  padding: 10px 40px;
-  border-radius: 5px;
-  background-color: $accentPrimary;
-  border-style: none;
-  color: $accentTertiary;
-  font-size: 1.5rem;
-  box-shadow: 3px 3px $accentQuaternary;
-  transition: background-color 250ms ease-in-out, transform 150ms ease;
-}
-
-button:hover,
-button:focus {
-  background-color: $accentTertiary;
-  color: #D2E603;
-}
-
-button:active{
-  box-shadow: 1px 1px $accentQuaternary;
-  transform: translateY(1px) translateX(1px);
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+p {
+  margin-top:5%;
 }
 
 .intro, form, .generatedMovie {
@@ -58,7 +40,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro, form {
-  max-width: 760px;
+  max-width: 650px;
+  width: 100%;
+}
+
+.overview, .intro p {
+  max-width: 550px;
+  text-align: center;
 }
 
 .poster {
@@ -66,10 +54,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 6px;
   max-width: 350px;
 };
-
-p {
-  margin-top:5%;
-}
 
 
 // Footer
