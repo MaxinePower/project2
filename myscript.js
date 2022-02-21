@@ -119,7 +119,7 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
 
             // --------MOVIE INFO DIV STUFF---------
 
-            // create div.movieInfo with an h3, div.genreRating, div.dateLanguage, p.overview
+            // create div.movieInfo with an h3, div.ratingDiv, div.dateLanguage, p.overview
             const movieInfo = document.createElement('div');
             movieInfo.classList.add('movieInfo');
 
@@ -128,8 +128,8 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
             h3.textContent = movieTitle;
 
             // created and filled div with genre rating
-            const genreRating = document.createElement(`div`);
-            genreRating.classList.add('genreRating');
+            const ratingDiv = document.createElement(`div`);
+            ratingDiv.classList.add('ratingDiv');
 
             // created and filled p tag with the movie rating
             const rating = document.createElement(`p`);
@@ -163,13 +163,13 @@ movieApp.getData = (genreID, eraRangeGte, eraRangeLte) => {
             generatedMovie.appendChild(imgContainer).appendChild(posterElement);
 
             // appending rating into rating div
-            genreRating.appendChild(rating);
+            ratingDiv.appendChild(rating);
 
             // appending content into dateLanguage
             dateLanguage.append(languageP, releaseDateP);
 
             // appending all of the elements we created into movieInfo
-            movieInfo.append(h3, genreRating, dateLanguage, description);
+            movieInfo.append(h3, ratingDiv, dateLanguage, description);
 
             // appending movieInfo div into generatedMovie section
             generatedMovie.appendChild(movieInfo);

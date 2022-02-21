@@ -253,7 +253,7 @@ h2, h3, label, button {
   font-family: "Fugaz One";
 }
 
-.genreRating, .dateLanguage {
+.ratingDiv, .dateLanguage {
   font-weight: 800;
   letter-spacing: 0.5px;
   font-size: 1rem;
